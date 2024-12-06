@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link href="css/style.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+<!-- navbar -->
+<nav class="bg-white">
+  <div class="container flex justify-between items-center mx-auto py-4">
+    <div class="logo">
+      <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+    </div>
+
+    <!-- burger -->
+    <div class="lg:hidden">
+      <button class="navbar-burger flex items-center text-black p-3">
+          <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+      </button>
+     </div>
+
+    <div class="sosmed items-center space-x-5 hidden lg:flex">
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+      </a>
+      <div class="search-box border rounded-full bg-white border-black text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-1 px-3 items-center">
+        <input name="lname" id="txtSearch" placeholder="Search" value="">
+        <button class="searchbtn" onclick="PSearch()" id="btnSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>            
+        </button>
+       </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 hidden lg:block">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="index.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="about.html" class="text-sm text-gray-500 hover:text-black">Tentang Kami</a></li>
+        <li class="flex items-center space-x-2 dropdown-button-produk">
+          <a href="produk.html" class="text-sm text-gray-500  hover:text-black">produk</a>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>            
+        </li>
+        <li><a href="teknologi.html" class="text-sm text-gray-500 hover:text-black">Teknologi</a></li>
+        <li class="flex items-center space-x-2">
+          <a href="news.html" class="text-sm text-gray-500 hover:text-black">Berita & Pameran</a>           
+        </li>
+        <li><a href="kontak.html" class="text-sm text-gray-500 hover:text-black">Hubungi Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- dropdown produk -->
+  <div class="hidden dropdown-produk bg-gray-50 border-t-2 absolute top-30 left-0 right-0 z-10">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="produkHome.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="produk.html" class="text-sm text-gray-500 hover:text-black">Vending</a></li>
+        <li><a href="produkKopiKantor.html" class="text-sm text-gray-500 hover:text-black">Kopi Kantor</a></li>
+        <li><a href="produkHoReCa.html" class="text-sm text-gray-500 hover:text-black">Ho.Re.Ca</a></li>
+        <li><a href="produkToGo.html" class="text-sm text-gray-500 hover:text-black">Coffee To Go</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- end dropdown produk -->
+
+
+<!-- sidebar -->
+<div class="navbar-menu relative z-50 hidden">
+<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+    <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <div class="logo">
+            <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+          </div>
+        </a>
+        <button class="navbar-close">
+            <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div>
+        <ul>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="index.html">Home</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="mb-1 produk-button">
+                <div class="p-4 flex justify-between item bg-center">
+                  <a class="block text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Produk</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                  </svg>
+                </div>
+                <div class="ml-4 pl-2 border-slate-300 border-l-2 hidden produk-dropdown">
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHome.html">Home</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Vending</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkKopiKantor.html">Kopi Kantor</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHoReCa.html">Ho.Re.Ca</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkToGo.html">Coffee To Go</a>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="teknologi.html">Teknologi</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="news.html">Berita & Pameran</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="kontak.html">Hubungi Kami</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+</nav>
+<!-- end navbar -->
+
+
+
+
+
+
+
+
+<!-- Main -->
+
+  <div class="flex overflow-hidden flex-col bg-white">
+    <main class="flex flex-col px-20 max-lg:px-10 mt-10 w-full max-md:px-5 max-md:max-w-full max-sm:justify-center max-sm:items-center max-sm:mx-auto">
+      <nav aria-label="Breadcrumb" class="flex gap-1 items-center self-start text-sm font-medium leading-8 text-zinc-800 max-sm:hidden max-sm:flex-row">
+        <a href="#" class="hover:underline">Home</a>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+        <a href="#" class="hover:underline">Products</a>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+        <a href="#" class="hover:underline">Coffee Vending Machine</a>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+        <span aria-current="page">Details</span>
+      </nav>
+  
+      <div class="mt-8 w-full max-w-[1312px] max-md:max-w-full">
+        <div class="flex gap-5 justify-center">
+          <aside class="flex flex-col w-[40%] max-md:ml-0 max-lg:w-full">
+            <div class="flex flex-col mt-3 leading-8 border-r border-neutral-300 min-h-[644px] text-zinc-800 max-md:mt-10 max-md:hidden max-sm:flex-col max-sm:mt-7 max-sm:grow-0 max-sm:min-h-[35px]">
+              <div class="flex flex-col max-w-full text-lg font-semibold whitespace-nowrap w-[133px]">
+                <h2>Kategori</h2>
+                <div class="flex mt-3 bg-zinc-800 min-h-[2px] w-[54px]"></div>
+              </div>
+              <nav class=" pr-10 flex flex-col mt-6 w-full text-sm font-medium max-sm:flex max-sm:flex-col max-sm:justify-start max-sm:mt-10" aria-label="Category navigation">
+                <a href="produk.html" class="hover:underline">Coffee Vending Machine</a>
+                <a href="#" class="mt-4 max-sm:mt-px max-sm:mb-auto hover:underline">Premium Coffee To Go</a>
+                <a href="#" class="mt-4 max-sm:-mt-px hover:underline">Ho.Re.Ca</a>
+                <a href="#" class="mt-4 hover:underline">Mesin Kopi Kantor</a>
+              </nav>
+            </div>
+          </aside>
+  
+          <div class="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
+            <article class="flex flex-col w-full max-md:mt-10 max-md:max-w-full">
+              <div class="max-md:mr-2.5 max-md:max-w-full max-sm:pt-3.5">
+                <div class="flex gap-5 max-md:flex-col">
+                  <div class="flex flex-col w-[58%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col justify-center items-center w-full max-md:mt-10 max-md:max-w-full">
+
+                      <div class="flex flex-col gap-4 justify-center items-center max-w-full w-[548px]">
+
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/73b99692ba7d38aef4146b2a7742dadb5ef205eb7d583969a07f23974063649b?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Touch Auto Coffee Machine JL28 main view" class="mx-auto object-contain grow shrink self-stretch my-auto aspect-[1.08] min-w-[240px] w-[426px] max-md:max-w-full" />
+
+                        <div>
+                          <button aria-label="Previous image" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ed30238b48b973f0bd1deb8da31f00378fe42537aa59427dc6a71403d9c57580?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-10 aspect-square" />
+                          </button>
+                          <button aria-label="Next image" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec16e1a6d1d57f96a45acf7c02a3d194c3f1c4b154096c084bddfb0a8808f680?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-10 aspect-square" />
+                          </button>
+                        </div>
+                        
+                      </div>
+                      <div class="flex gap-6 items-center mt-3 max-md:max-w-full" role="tablist">
+                        <button role="tab" aria-selected="true" aria-label="View image 1">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b11439b2b040ea46ded6bd160b2d8c86efbabe724485321ae4220d3dbd50b5d?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto rounded-lg aspect-square w-[100px]" />
+                        </button>
+                        <button role="tab" aria-selected="false" aria-label="View image 2">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13934dc6933511715e601e56d5d0b63e4697e02978b52250194d6b6461571d31?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto rounded-lg aspect-square w-[100px]" />
+                        </button>
+                        <button role="tab" aria-selected="false" aria-label="View image 3">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13934dc6933511715e601e56d5d0b63e4697e02978b52250194d6b6461571d31?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto rounded-lg aspect-square w-[100px]" />
+                        </button>
+                        <button role="tab" aria-selected="false" aria-label="View image 4">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13934dc6933511715e601e56d5d0b63e4697e02978b52250194d6b6461571d31?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto rounded-lg aspect-square w-[100px]" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="flex flex-col ml-5 w-[42%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col items-start max-sm:items-center max-sm:text-center self-stretch my-auto max-md:mt-10">
+                      <h1 class="self-stretch text-2xl font-semibold leading-8 text-zinc-800">
+                        Touch Auto Coffee Machine JL28
+                      </h1>
+                      <div class="mt-11 text-sm font-medium leading-7 text-zinc-800 max-md:mt-10">
+                        · Make 20+ beverages · ES Brewer(14g/20g) · Bean Hopper(1*1.5kg) · Instant Canister(2*1.5L+2*1.0L) · Cup Dispenser
+                      </div>
+                      <div class="flex flex-col mt-8 max-w-full w-[368px]">
+                        <div class="flex gap-3 items-center w-full text-base font-medium leading-8 max-sm:flex max-lg:flex-col">
+                          <button class="gap-2.5 self-stretch p-2.5 my-auto border border-solid border-zinc-800 text-zinc-800 w-[178px] max-sm:w-full hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800">
+                            Kirim Pertanyaan
+                          </button>
+                          <button class="gap-2.5 self-stretch p-2.5 my-auto text-white border border-solid bg-zinc-800 border-zinc-800 w-[178px] max-sm:w-full hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800">
+                            Chat Sekarang
+                          </button>
+                        </div>
+                        <div class="flex gap-5 justify-between items-center mt-6 w-28 max-w-full max-sm:mx-auto">
+                          <button aria-label="Share on social media 1">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/20c9bdce81040a9954c492e0684355fab7cb84c8a123c0b2101dedf434d503a7?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+                          </button>
+                          <button aria-label="Share on social media 2">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d79e76b913165dcc09fc74673adb929abf8aceea6baf75d19aacbf0a2631b80?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+                          </button>
+                          <button aria-label="Share on social media 3">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d53380dc00b75a89cea743e5e6ca56c72464a15161082b08be619c4e25597a31?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- produk detail -->
+              <section class="flex flex-col mt-20 w-full justify-center text-black max-md:mt-10 max-md:max-w-full">
+
+                <div class="flex flex-wrap items-center w-full text-lg font-medium leading-8 border-b border-neutral-400 max-md:mr-2.5 max-md:max-w-full" role="tablist">
+                  <button role="tab" aria-selected="true" class="button-deskripsi gap-2.5 self-stretch px-2.5 py-3 my-auto whitespace-nowrap border-black border-b-[3px]">
+                    Deskripsi
+                  </button>
+                  <button role="tab" aria-selected="false" class="button-model gap-2.5 self-stretch px-2.5 py-3 my-auto focus:outline-none border-black">
+                    Model Layout
+                  </button>
+                </div>
+                
+                <!-- model layout -->
+                <div class="model-layout mt-10 hidden">
+                  <img src="../src/css/img/Frame 78.png" alt="">
+                </div>
+
+                <!-- desc -->
+                 <section class="deskripsi">
+                <div class="flex flex-col pb-16 mt-10 border-b border-neutral-400 max-md:max-w-full" role="tabpanel" aria-labelledby="description-tab">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c2283d6cf6472e3a4dcb6f4796d28ae9785825e651dbc89861a050dad039182?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Coffee machine features overview" class="object-contain w-full rounded-lg aspect-[2.6] max-md:max-w-full" />
+                  <div class="flex flex-col mt-10 w-full max-md:max-w-full">
+                    <div class="flex flex-col max-w-full w-[971px]">
+                      <h2 class="text-2xl font-semibold leading-none max-md:max-w-full">
+                        Ringkasan Produk
+                      </h2>
+                      <p class="mt-3 text-base font-medium leading-8 max-md:max-w-full">
+                        JL28 is tabletop sized touch auto coffee machine, It is a table top coffee machine and has a mini cup dispenser inside. It can make more than 20 beverages, making it a good solution for office and home use for hot and aromatic coffee drinks. The machine comes with a 14 inch touch screen and auto machine cleaning, convenient for use and daily clean.
+                      </p>
+                    </div>
+  
+                    <div class="flex flex-wrap gap-10 items-start self-start mt-8 max-md:max-w-full">
+                      <div class="flex flex-col self-stretch my-auto min-w-[240px] w-[346px]">
+                        <h3 class="text-2xl font-semibold leading-none">
+                          Konfigurasi Mesin
+                        </h3>
+                        <ul class="mt-3 text-base font-medium leading-8 list-none">
+                          <li>Bean hopper: 1×1.5Kg</li>
+                          <li>Instant canister: 2×1.5L+2×1L</li>
+                          <li>Grinder: 1×Jetinno grinder</li>
+                          <li>ES brewer: 1×14g/20g</li>
+                          <li>Filter brewer:1×14g (tea,optional)</li>
+                          <li>Mixer: 2</li>
+                          <li>Drip tray: 1×1.5L</li>
+                          <li>Waste bucket: 1×130 cakes</li>
+                        </ul>
+                      </div>
+  
+                      <div class="flex flex-col self-stretch my-auto min-w-[240px] w-[511px] max-md:max-w-full">
+                        <h3 class="text-2xl font-semibold leading-none max-md:max-w-full">
+                          Parameter Mesin
+                        </h3>
+                        <ul class="mt-3 text-base font-medium leading-8 max-md:max-w-full list-none">
+                          <li>Interface: 14＂touch display (vertical)</li>
+                          <li>Rated voltage/frequency: 220~240V 50/60Hz</li>
+                          <li>Rated power: 2700W (230V)</li>
+                          <li>Machine dimension: 420(W)*800(H)*660(D)mm</li>
+                          <li>Net weight: 60Kg</li>
+                          <li>OS: Android/Linux</li>
+                          <li>Network: WiFi/4G</li>
+                          <li>Maintenance frequency: 2~3 days</li>
+                        </ul>
+                      </div>
+                    </div>
+  
+                    <div class="flex flex-col mt-8 w-full max-md:max-w-full">
+                      <h3 class="text-2xl font-semibold leading-none max-md:max-w-full">
+                        Detail Minuman
+                      </h3>
+                      <dl class="mt-3 text-base font-medium leading-8 max-md:max-w-full">
+                        <dt class="font-bold inline">Beverages:</dt>
+                        <dd class="inline"> can make over 20 beverages (Espresso, Americano, Cappuccino, Mocha, Milk, Chocolate)</dd>
+                        <br />
+                        <dt class="font-bold inline">Daily Output:</dt>
+                        <dd class="inline"> 250 cups</dd>
+                        <br />
+                        <dt class="font-bold inline">Cup Size:</dt>
+                        <dd class="inline"> 10Oz D80mm</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                </section>
+              </section>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex flex-col self-end pb-16 mt-10 w-full text-black border-b border-neutral-400 max-w-[980px] max-md:mr-1.5 max-md:max-w-full max-sm:self-center">
+        <section class=" my-10 max-md:mt-10 max-md:self-center">
+          <h2 class="text-4xl font-bold leading-none text-black">
+            Sorotan Produk
+          </h2>
+        </section>
+        <div class="px-5 flex flex-wrap gap-8 items-center w-full rounded-lg bg-neutral-100 min-h-[307px] max-md:max-w-full max-sm:pb-6 max-sm:mx-auto">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/439287f28f91cde0b9afef49a195546b27d8aef635b681f8c449494613fd8c74?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Automatic cup dispensing system" class="object-contain grow shrink self-stretch my-auto aspect-[1.22] min-w-[240px] w-[300px] max-sm:grow max-sm:m-auto max-sm:w-full" />
+          <div class="flex flex-col grow shrink self-stretch my-auto min-w-[240px] w-[521px] max-md:max-w-full">
+            <h3 class="gap-2.5 self-start p-2.5 text-2xl font-bold leading-none max-md:max-w-full">
+              Sistem Pengeluaran Cangkir Otomatis
+            </h3>
+            <p class="flex-1 shrink gap-2.5 self-stretch p-2.5 w-full text-sm font-medium leading-7 max-md:max-w-full">
+              JL28 menawarkan modul pengeluaran cangkir otomatis yang inovatif yang merevolusi pengalaman pembelian kopi. Dengan JL28, prosesnya mulus dan nyaman. Dengan satu sentuhan tombol, cangkir kertas sekali pakai yang baru dan segar secara otomatis dikeluarkan, siap untuk diisi dengan minuman yang lezat.
+            </p>
+          </div>
+        </div>
+  
+        <div class="flex flex-wrap gap-8 items-center mt-8 w-full text-white bg-black rounded-lg min-h-[307px] rotate-[3.141592653589793rad]  max-md:max-w-full max-sm:pb-6">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/18ce759ef2e7956b7e8f001eb6144878f7ced118d95dd95e3e1c298cc3720356?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Sleek and well-sealed design" class="object-contain grow shrink self-stretch my-auto aspect-[1.22] min-w-[240px] w-[300px]" />
+          <div class="px-5  flex flex-col grow shrink self-stretch my-auto min-w-[240px] rotate-[3.141592653589793rad] w-[521px] max-md:max-w-full">
+            <h3 class="gap-2.5 self-start p-2.5 text-2xl font-bold leading-none max-md:max-w-full">
+              Desain Ramping dan Tersegel dengan Baik
+            </h3>
+            <p class="flex-1 shrink gap-2.5 self-stretch p-2.5 w-full text-sm font-medium leading-7 max-md:max-w-full">
+              Desain eksterior yang ramping dengan layar 14" yang dipasang secara vertikal dan lapisan logam yang dipoles. Seluruh mesin tertutup rapat untuk mencegah masuknya serangga
+            </p>
+          </div>
+        </div>
+  
+        <div class="flex flex-wrap gap-8 items-center mt-8 w-full rounded-lg bg-neutral-100 min-h-[307px] max-md:max-w-full">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/995706871213c92be3474eba7e549bf2c67b71552d5612648a74baadb5b8b9de?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Various beverage options" class="object-contain grow shrink self-stretch my-auto aspect-[1.22] min-w-[240px] w-[300px] max-sm:grow max-sm:w-full" />
+          <div class="px-5 flex flex-col grow shrink self-stretch my-auto min-w-[240px] w-[521px] max-md:max-w-full">
+            <h3 class="gap-2.5 self-start p-2.5 text-2xl font-bold leading-none">
+              Berbagai Jenis Minuman
+            </h3>
+            <p class="flex-1 shrink gap-2.5 self-stretch p-2.5 w-full text-sm font-medium leading-7 max-md:max-w-full">
+              Menanggapi permintaan akan berbagai pilihan minuman, JL28 dilengkapi dengan desain kompartemen multi-bubuk yang serbaguna. Dengan empat wadah bubuk khusus, mesin ini memiliki kapasitas untuk membuat lebih dari 15 pilihan kombinasi kopi yang unik.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      
+      <!--Section2 -->
+      <section class="flex flex-col self-end mt-16 w-full max-w-[1040px] max-md:mt-10 max-md:max-w-full">
+        
+
+        <!-- Faq -->
+        <section class="text-black">
+          <div class="container lg:px-20 flex flex-col justify-start mx-auto">
+            <h2 class="mb-12 text-4xl font-bold leadi text-start sm:text-5xl">Frequently Asked Questions</h2>
+            <div class="flex flex-col divide-y divide-gray-700">
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q1: Are you a factory or a trading company?</summary>
+                <div class="px-4 pb-4">
+                  <p>A1: We are a 13-year old factory.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q2: Do your company go to exhibitions?</summary>
+                <div class="px-4 pb-4">
+                  <p>A2: Yes, we have been in many shows, both China and outside China, including Guangzhou Hotelex, Shanghai Hotelex, NAMA in the US, Milan Venditalia, Milan Host Milano, Singapore Food & Hotel Asia.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q3: Where is your company? Can I pay a visit to your company?</summary>
+                <div class="px-4 pb-4">
+                  <p>A3: We are based in Guangzhou, China and we of course welcome your visit.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q4: Do your company offer any after sales services? And what are they?</summary>
+                <div class="px-4 pb-4">
+                  <p>A4: Yes, we offer professional after sales services, including one year machine warranty, three years key component warranty.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q5: Do your company hire agents? What are the qualifications?</summary>
+                <div class="px-4 pb-4">
+                  <p>A5: Yes, we are now hiring agents globally, if you are interested in it we can talk the details.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q6: How long can I get a reply after my inquiry?</summary>
+                <div class="px-4 pb-4">
+                  <p>A6: Depends on your time zone. Most of the time, we will respond ASAP.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q7: What is your office hour?</summary>
+                <div class="px-4 pb-4">
+                  <p>A7: 9:00 AM to 18:00 PM, Monday to Friday.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q8: Do your products open to a third-party certification like SGS?
+                </summary>
+                <div class="px-4 pb-4">
+                  <p>A8: Yes, we are open to third-party certifications.</p>
+                </div>
+              </details>
+              <details>
+                <summary class="py-5 outline-none cursor-pointer focus:underline">Q9: How about your PQC
+                </summary>
+                <div class="px-4 pb-4">
+                  <p>A9: We do it strictly and honestly, we are a 13-year experienced factory and we know the drill.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>                              
+        <!-- end Faq -->
+  
+
+        <section class="flex flex-col mt-16 w-full max-md:mt-10 max-md:max-w-full lg:pl-20">
+          <h2 class="text-3xl font-bold leading-none text-black max-md:max-w-full">
+            KIRIM PERTANYAAN
+          </h2>
+          <form class="flex flex-col mt-8 w-full text-base font-medium text-zinc-500 max-md:max-w-full">
+            <div class="mb-6">
+              <label for="name" class="sr-only">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" class="gap-2.5 self-stretch p-2.5 w-full leading-8 border border-solid border-zinc-400 max-md:max-w-full focus:ring-2 focus:ring-zinc-800 focus:outline-none" required />
+            </div>
+            
+            <div class="mb-6">
+              <label for="email" class="sr-only">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="E-mail" class="gap-2.5 self-stretch p-2.5 w-full leading-8 border border-solid border-zinc-400 max-md:max-w-full focus:ring-2 focus:ring-zinc-800 focus:outline-none" required />
+            </div>
+            
+            <div class="mb-6">
+              <label for="phone" class="sr-only">Phone/WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="Phone/WhatsApp" class="gap-2.5 self-stretch p-2.5 w-full leading-8 border border-solid border-zinc-400 max-md:max-w-full focus:ring-2 focus:ring-zinc-800 focus:outline-none" required />
+            </div>
+            
+            <div class="mb-6">
+              <label for="company" class="sr-only">Company</label>
+              <input type="text" id="company" name="company" placeholder="Company" class="gap-2.5 self-stretch p-2.5 w-full leading-8 border border-solid border-zinc-400 max-md:max-w-full focus:ring-2 focus:ring-zinc-800 focus:outline-none" required />
+            </div>
+            
+            <div class="mb-6">
+              <label for="message" class="sr-only">Message</label>
+              <textarea id="message" name="message" placeholder="Thanks" rows="6" class="gap-2.5 px-2.5 pt-2.5 w-full leading-8 border border-solid border-zinc-400 min-h-[170px] max-md:pb-24 max-md:max-w-full focus:ring-2 focus:ring-zinc-800 focus:outline-none" required></textarea>
+            </div>
+            
+            <button type="submit" class="gap-2.5 self-start px-6 py-3 font-semibold text-center text-white border border-solid bg-zinc-800 border-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800 max-md:px-5">
+              Tinggalkan pesan
+            </button>
+          </form>
+
+        </section>
+          <!-- more product -->
+            <div tabindex="0" class="focus:outline-none mt-20">
+                  <!-- Remove py-8 -->
+                  <div class="mx-auto lg:pl-20 container py-8">
+                    <h1 class="font-bold text-3xl">Anda Mungkin Juga Menyukai</h1>
+                      <div class="flex flex-wrap items-center justify-start mt-10">
+                          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                            <article class="">
+                              <a href="#" class="">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34537a61ba722e4fbba007a25639619dc0c0811bbb31711a34c198c701c26905?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Countertop Espresso Machine JLTT-14" class="object-contain w-full" />
+                                <h3 class="mt-4">Countertop Espresso Machine JLTT-14</h3>
+                              </a>
+                            </article>
+                          </div>
+                          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                            <article class="">
+                              <a href="#" class="">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34537a61ba722e4fbba007a25639619dc0c0811bbb31711a34c198c701c26905?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Countertop Espresso Machine JLTT-14" class="object-contain w-full" />
+                                <h3 class="mt-4">Countertop Espresso Machine JLTT-14</h3>
+                              </a>
+                            </article>
+                          </div>
+                          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                            <article class="">
+                              <a href="#" class="">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34537a61ba722e4fbba007a25639619dc0c0811bbb31711a34c198c701c26905?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Countertop Espresso Machine JLTT-14" class="object-contain w-full" />
+                                <h3 class="mt-4">Countertop Espresso Machine JLTT-14</h3>
+                              </a>
+                            </article>
+                          </div>
+                          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                            <article class="">
+                              <a href="#" class="">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34537a61ba722e4fbba007a25639619dc0c0811bbb31711a34c198c701c26905?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Countertop Espresso Machine JLTT-14" class="object-contain w-full" />
+                                <h3 class="mt-4">Countertop Espresso Machine JLTT-14</h3>
+                              </a>
+                            </article>
+                          </div>
+                          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                            <article class="">
+                              <a href="#" class="">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34537a61ba722e4fbba007a25639619dc0c0811bbb31711a34c198c701c26905?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Countertop Espresso Machine JLTT-14" class="object-contain w-full" />
+                                <h3 class="mt-4">Countertop Espresso Machine JLTT-14</h3>
+                              </a>
+                            </article>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+      </section>
+
+      
+    </main>
+  </div>
+<!-- End Main -->
+
+
+
+
+
+<!-- Foooter -->
+<footer class="w-full">
+  <div class="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!--Grid-->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+              <a href="#"  class="flex justify-center lg:justify-start">
+                 <img src="../src/css/img/jetinno.png" alt="">
+              </a>
+              <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">We manufacture full series coffee machines for vending/horeca/ocs deployment.</p>
+              <a href="javascript:;"  class="py-2.5 px-5 block w-fit border-2 border-black shadow-sm text-sm text-black mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                  Kontak Kami
+              </a>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Informasi</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Company</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Produk</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Berita & Pameran</a></li>
+                  <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kontak Kami</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Kategori Produk</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kopi Kantor</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Ho.Re.Ca</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Vending</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Coffee To Go</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Hubungi Kami</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Address: </span>4th Floor, Dehao Innovative Park, No.2, Ruitai Rd, Huangpu District, Guangzhou, Guangdong, P.R.C</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Phone: </span>+86-18620946175</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Whatsapp: </span>+86-15813394936</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Email: </span>inquiry@jetinno.com</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          
+      </div>
+      <!--Grid-->
+      <div class="py-7 border-t border-gray-200">
+          <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+              <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/"></a> 2024 Jetinno.</span>
+              <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+
+
+<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+<script src="js/scriptDetailProduk.js"></script>
+</body>
+</html>

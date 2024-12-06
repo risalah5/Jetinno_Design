@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link href="css/style.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+<!-- navbar -->
+<nav class="bg-white">
+  <div class="container flex justify-between items-center mx-auto py-4">
+    <div class="logo">
+      <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+    </div>
+
+    <!-- burger -->
+    <div class="lg:hidden">
+      <button class="navbar-burger flex items-center text-black p-3">
+          <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+      </button>
+     </div>
+
+    <div class="sosmed items-center space-x-5 hidden lg:flex">
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+      </a>
+      <div class="search-box border rounded-full bg-white border-black text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-1 px-3 items-center">
+        <input name="lname" id="txtSearch" placeholder="Search" value="">
+        <button class="searchbtn" onclick="PSearch()" id="btnSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>            
+        </button>
+       </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 hidden lg:block">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="index.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="about.html" class="text-sm text-gray-500 hover:text-black">Tentang Kami</a></li>
+        <li class="flex items-center space-x-2 dropdown-button-produk">
+          <a href="produk.html" class="text-sm text-gray-500  hover:text-black">produk</a>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>            
+        </li>
+        <li><a href="teknologi.html" class="text-sm text-gray-500 hover:text-black">Teknologi</a></li>
+        <li class="flex items-center space-x-2">
+          <a href="news.html" class="text-sm text-gray-500 hover:text-black">Berita & Pameran</a>           
+        </li>
+        <li><a href="kontak.html" class="text-sm text-gray-500 hover:text-black">Hubungi Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- dropdown produk -->
+  <div class="hidden dropdown-produk bg-gray-50 border-t-2 absolute top-30 left-0 right-0 z-10">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="produkHome.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="produk.html" class="text-sm text-gray-500 hover:text-black">Vending</a></li>
+        <li><a href="produkKopiKantor.html" class="text-sm text-gray-500 hover:text-black">Kopi Kantor</a></li>
+        <li><a href="produkHoReCa.html" class="text-sm text-gray-500 hover:text-black">Ho.Re.Ca</a></li>
+        <li><a href="produkToGo.html" class="text-sm text-gray-500 hover:text-black">Coffee To Go</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- end dropdown produk -->
+
+
+<!-- sidebar -->
+<div class="navbar-menu relative z-50 hidden">
+<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+    <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <div class="logo">
+            <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+          </div>
+        </a>
+        <button class="navbar-close">
+            <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div>
+        <ul>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="index.html">Home</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="mb-1 produk-button">
+                <div class="p-4 flex justify-between item bg-center">
+                  <a class="block text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Produk</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                  </svg>
+                </div>
+                <div class="ml-4 pl-2 border-slate-300 border-l-2 hidden produk-dropdown">
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHome.html">Home</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Vending</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkKopiKantor.html">Kopi Kantor</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHoReCa.html">Ho.Re.Ca</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkToGo.html">Coffee To Go</a>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="teknologi.html">Teknologi</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="news.html">Berita & Pameran</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="kontak.html">Hubungi Kami</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+</nav>
+<!-- end navbar -->
+
+
+
+<!-- header -->
+<div class="flex overflow-hidden flex-col w-full text-3xl font-bold text-white bg-[radial-gradient(95.07%_50%_at_50%_50%,#FFF_0%,#D5D5D5_100%)] max-md:max-w-full">
+    <div class="flex relative flex-col justify-center items-start px-20 py-32 w-full min-h-[377px] max-md:px-5 max-md:py-24 max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dfaba14208b06d9b025ea33c604d6a831a166369ab6ebffdbc1db8014f75801?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Coffee machine background" class="object-cover absolute inset-0 size-full" />
+      <div class="flex relative flex-col justify-center p-2.5 -mb-6 max-md:mb-2.5 max-md:max-w-full">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/af1bbdc92d981788b998366592bc1ed9f9f81c017902c8cb5fd5f2bed937ca0b?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain w-8 aspect-square" />
+        <h1 class="mt-5 max-md:max-w-full font-title font-normal">
+          SIAP SAJIKAN KOPI
+          <span class="font-bold">
+              <br/>
+              DIMANAPUN & KAPANPUN
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end header -->
+
+
+
+<!-- Main -->
+<main class="flex flex-col items-start px-16 mt-6 w-full max-md:px-5 max-md:max-w-full">
+    <div aria-label="Breadcrumb" class="max-sm:hidden flex gap-1 items-center text-sm font-medium leading-8 text-zinc-800">
+      <a href="#" class="hover:underline">Home</a>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain w-6 aspect-square" />
+      <a href="#" class="hover:underline">Products</a>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain w-6 aspect-square" />
+      <span aria-current="page">Coffee Vending Machine</span>
+    </div>
+
+    <h2 class="mt-8 text-3xl text-zinc-800 max-md:max-w-full font-title">
+      Coffee
+      <br />
+      <span class="font-bold font-title">Vending Machine</span>
+    </h2>
+
+    <p class="mt-3.5 text-base leading-8 text-zinc-800 max-md:max-w-full">
+      Ketika kita berbicara tentang mesin penjual otomatis, Kita berbicara tentang keandalan, kenyamanan, dan penggunaan yang ramah. Mesin penjual kopi Jetinno dibuat dengan semua kualitas ini. Jetinno, SEMUA UNTUK PILIHAN ANDA.
+    </p>
+
+    <!-- mobile -->
+    <div class="md:hidden w-full">
+      <button class="w-full flex items-center justify-between p-4 bg-stone-50 rounded-lg" 
+              aria-expanded="false"
+              aria-controls="mobile-filters">
+          <span class="font-semibold">Filter kopi</span>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e852140f36cf7ca88aee2d8927d6bcfd618b118f5e3531cd3989b5233d08742?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" class="w-6 h-6" alt="" />
+      </button>
+      <div id="mobile-filters" class="hidden mt-2 p-4 bg-white rounded-lg shadow-lg">
+          <nav aria-label="Article categories">
+            <a href="produk.html" class="block py-2 hover:text-zinc-600">Coffee Vending Machine</a>
+            <a href="produkHome.html" class="block py-2 hover:text-zinc-600">Home</a>
+            <a href="produkToGo.html" class="block py-2 hover:text-zinc-600">Premium Coffee To Go</a>
+            <a href="produkHoReCa.html" class="block py-2 hover:text-zinc-600">Ho.Re.ca</a>
+            <a href="produkKopiKantor.html" class="block py-2 hover:text-zinc-600">Kopi Kantor</a>
+          </nav>
+      </div> 
+  </div>
+
+  <!-- desktop -->
+    <div class="self-stretch mt-20 max-md:mt-10 max-md:max-w-full">
+      <div class="flex gap-5 max-md:flex-col">
+        <aside class="flex flex-col w-[19%] max-md:ml-0 max-md:w-full max-md:hidden">
+          <div class="flex flex-col leading-8 border-r border-neutral-300 min-h-[644px] text-zinc-800 max-md:mt-10">
+            <div class="flex flex-col max-w-full text-lg font-semibold whitespace-nowrap w-[133px]">
+              <h3>Kategori</h3>
+              <div class="flex mt-3 bg-zinc-800 min-h-[2px] w-[54px]"></div>
+            </div>
+            <nav class="flex flex-col mt-6 w-full text-sm font-medium" aria-label="Product Categories">
+              <a href="produk.html" class="py-2 hover:text-zinc-600">Coffee Vending Machine</a>
+              <a href="produkHome.html" class="py-2 hover:text-zinc-600">Home</a>
+              <a href="produkToGo.html" class="py-2 hover:text-zinc-600">Premium Coffee To Go</a>
+              <a href="produkHoReCa.html" class="py-2 hover:text-zinc-600">Ho.Re.Ca</a>
+              <a href="produkKopiKantor.html" class="py-2 hover:text-zinc-600">Mesin Kopi Kantor</a>
+            </nav>
+          </div>
+        </aside>
+
+        <section class="flex flex-col ml-5 w-[81%] max-md:ml-0 max-md:w-full" aria-label="Product Listings">
+          
+         <!-- produk 1 -->
+          <div
+          class="flex max-lg:flex-wrap bg-cover justify-between items-center self-stretch mb-10 px-24 pt-9 pb-16 ml-0 w-auto bg-black rounded-lg max-md:px-5 hover:shadow-xl transition-all"
+          role="region"
+          aria-label="Coffee Machine Product Display"
+          style="background-image: url(../src/css/img/vening-bg-1.png);">
+          <div class="flex overflow-hidden flex-col justify-center self-stretch my-auto w-[240px] max-sm:mx-auto">
+            <img
+              loading="lazy"
+              src="../src/css/img/vening-produk-1.png" 
+              alt="Touch Auto Coffee Machine JL28"
+              class="object-contain w-full aspect-[0.73] max-sm:mt-2.5"
+            />
+          </div>
+          <div
+            class="flex flex-col justify-center self-stretch my-auto text-white min-w-[240px] w-[540px] max-md:max-w-full max-sm:pb-14 ml-10">
+            <div class="flex flex-col w-full text-right max-md:max-w-full max-lg:mt-10">
+              <div
+                class="text-2xl font-semibold leading-none max-md:max-w-full max-sm:mr-auto max-lg:text-left">
+                <h1>Touch Auto Coffee Machine JL28</h1>
+              </div>
+              <div class="self-end mt-3 text-sm leading-6 max-lg:self-start max-lg:text-start">
+                  <ul>
+                    <li>Make 20+ beverages</li>
+                    <li>ES Brewer(14g/20g)</li>
+                    <li>Bean Hopper(1*1.5kg)</li>
+                    <li>Instant Canister(2*1.5L+2*1.0L)</li>
+                    <li>Cup Dispenser</li>
+                  </ul>
+              </div>
+            </div>
+            <a
+            href="produkDetail.html"
+            class="self-end p-2.5 mt-8 text-xs font-semibold text-center whitespace-nowrap border border-white border-solid rounded-[38px] w-[89px] max-lg:self-start max-sm:mt-5 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Explore Touch Auto Coffee Machine JL28">
+            Eksplor
+          </a>
+          </div>
+        </div>
+          <!-- produk 1 -->
+
+          <!-- produk 2 -->
+          <div
+          class="flex max-lg:flex-wrap bg-cover justify-between items-center self-stretch mb-10 px-24 pt-9 pb-16 ml-0 w-auto bg-black rounded-lg max-md:px-5 hover:shadow-xl transition-all"
+          role="region"
+          aria-label="Coffee Machine Product Display"
+          style="background-image: url(../src/css/img/vening-bg-2.png);">
+          <div class="flex overflow-hidden flex-col justify-center self-stretch my-auto w-[240px] max-sm:mx-auto">
+            <img
+              loading="lazy"
+              src="../src/css/img/vening-produk-3.png"
+              alt="Touch Auto Coffee Machine JL28"
+              class="object-contain w-full aspect-[0.73] max-sm:mt-2.5"
+            />
+          </div>
+          <div
+            class="flex flex-col justify-center self-stretch my-auto text-black min-w-[240px] w-[540px] max-md:max-w-full max-sm:pb-14 ml-10">
+            <div class="flex flex-col w-full text-right max-md:max-w-full max-lg:mt-10">
+              <div
+                class="text-2xl font-semibold leading-none max-md:max-w-full max-sm:mr-auto max-lg:text-left">
+                <h1>Cold Coffee Machine JL500Is</h1>
+              </div>
+              <div class="self-end mt-3 text-sm leading-6 max-lg:self-start max-lg:text-start">
+                  <ul>
+                    <li>Make 40+ beverages</li>
+                      <li>ES Brewer(14g/20g) Filter Brewer(Tea 14g)</li>
+                      <li>Bean Hopper(1*1.5kg)</li>
+                      <li>Instant Canister(6*4.0L)</li>
+                      <li>Ice Maker</li>
+                  </ul>
+              </div>
+            </div>
+            <a
+            href="produkDetail.html"
+            class="self-end p-2.5 mt-8 text-xs font-semibold text-center whitespace-nowrap border border-black border-solid rounded-[38px] w-[89px] max-lg:self-start max-sm:mt-5 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Explore Touch Auto Coffee Machine JL28">
+            Eksplor
+          </a>
+          </div>
+        </div>
+        <!-- produk 2 -->
+
+        <!-- produk 3 -->
+        <div
+        class="flex max-lg:flex-wrap bg-cover justify-between items-center self-stretch mb-10 px-24 pt-9 pb-16 ml-0 w-auto bg-black rounded-lg max-md:px-5 hover:shadow-xl transition-all"
+        role="region"
+        aria-label="Coffee Machine Product Display"
+        style="background-image: url(../src/css/img/vening-bg-1.png);">
+        <div class="flex overflow-hidden flex-col justify-center self-stretch my-auto w-[240px] max-sm:mx-auto">
+          <img
+            loading="lazy"
+            src="../src/css/img/jl500.png" 
+            alt="Touch Auto Coffee Machine JL28"
+            class="object-contain w-full aspect-[0.73] max-sm:mt-2.5"
+          />
+        </div>
+        <div
+          class="flex flex-col justify-center self-stretch my-auto text-white min-w-[240px] w-[540px] max-md:max-w-full max-sm:pb-14 ml-10">
+          <div class="flex flex-col w-full text-right max-md:max-w-full max-lg:mt-10">
+            <div
+              class="text-2xl font-semibold leading-none max-md:max-w-full max-sm:mr-auto max-lg:text-left">
+              <h1>Floor Standing Coffee Machine With Dispenser JL500</h1>
+            </div>
+            <div class="self-end mt-3 text-sm leading-6 max-lg:self-start max-lg:text-start">
+                <ul>
+                  <li>Make 20+ beverages</li>
+                  <li>ES Brewer(14g/20g)</li>
+                  <li>Bean Hopper(1*1.5kg)</li>
+                  <li>Instant Canister(2*1.5L+2*1.0L)</li>
+                  <li>Cup Dispenser</li>
+                </ul>
+            </div>
+          </div>
+          <a
+          href="#"
+          class="self-end p-2.5 mt-8 text-xs font-semibold text-center whitespace-nowrap border border-white border-solid rounded-[38px] w-[89px] max-lg:self-start max-sm:mt-5 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+          aria-label="Explore Touch Auto Coffee Machine JL28">
+          Eksplor
+        </a>
+        </div>
+      </div>
+        <!-- produk 3 -->
+
+    
+        </section>
+      </div>
+    </div>
+    
+  </main>
+</div>
+<!-- End Main -->
+
+<!-- Foooter -->
+<footer class="w-full">
+    <div class="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!--Grid-->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
+            <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+                <a href="#"  class="flex justify-center lg:justify-start">
+                   <img src="../src/css/img/jetinno.png" alt="">
+                </a>
+                <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">We manufacture full series coffee machines for vending/horeca/ocs deployment.</p>
+                <a href="javascript:;"  class="py-2.5 px-5 block w-fit border-2 border-black shadow-sm text-sm text-black mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                    Kontak Kami
+                </a>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                <h4 class="text-lg text-gray-900 font-medium mb-7">Informasi</h4>
+                <ul class="text-sm  transition-all duration-500">
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Company</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Produk</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Berita & Pameran</a></li>
+                    <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                <h4 class="text-lg text-gray-900 font-medium mb-7">Kategori Produk</h4>
+                <ul class="text-sm  transition-all duration-500">
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kopi Kantor</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Ho.Re.Ca</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Vending</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Coffee To Go</a></li>
+                </ul>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left">
+                <h4 class="text-lg text-gray-900 font-medium mb-7">Hubungi Kami</h4>
+                <ul class="text-sm  transition-all duration-500">
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Address: </span>4th Floor, Dehao Innovative Park, No.2, Ruitai Rd, Huangpu District, Guangzhou, Guangdong, P.R.C</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Phone: </span>+86-18620946175</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Whatsapp: </span>+86-15813394936</a></li>
+                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Email: </span>inquiry@jetinno.com</a></li>
+                </ul>
+            </div>
+            <!--End Col-->
+            
+        </div>
+        <!--Grid-->
+        <div class="py-7 border-t border-gray-200">
+            <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+                <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/"></a> 2024 Jetinno.</span>
+                <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                  <a href="">
+                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+                  </a>
+                  <a href="">
+                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+                  </a>
+                  <a href="">
+                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+<!-- End Footer -->
+
+
+
+<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+<script src="js/scriptProduk.js"></script>
+</body>
+</html>

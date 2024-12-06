@@ -1,0 +1,666 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="css/style.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+</head>
+<body>
+<!-- navbar -->
+<nav class="bg-white">
+    <div class="container flex justify-between items-center mx-auto py-4">
+      <div class="logo">
+        <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+      </div>
+  
+      <!-- burger -->
+      <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-black p-3">
+            <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </button>
+       </div>
+  
+      <div class="sosmed items-center space-x-5 hidden lg:flex">
+        <a href="">
+          <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+        </a>
+        <a href="">
+          <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+        </a>
+        <a href="">
+          <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+        </a>
+        <div class="search-box border rounded-full bg-white border-black text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-1 px-3 items-center">
+          <input name="lname" id="txtSearch" placeholder="Search" value="">
+          <button class="searchbtn" onclick="PSearch()" id="btnSearch">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>            
+          </button>
+         </div>
+      </div>
+    </div>
+  
+    <div class="bg-gray-50 hidden lg:block">
+      <div class="container mx-auto py-2">
+        <ul class="flex space-x-10 justify-end">
+          <li><a href="index.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+          <li><a href="about.html" class="text-sm text-gray-500 hover:text-black">Tentang Kami</a></li>
+          <li class="flex items-center space-x-2 dropdown-button-produk">
+            <a href="produk.html" class="text-sm text-gray-500  hover:text-black">produk</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>            
+          </li>
+          <li><a href="teknologi.html" class="text-sm text-gray-500 hover:text-black">Teknologi</a></li>
+          <li class="flex items-center space-x-2">
+            <a href="news.html" class="text-sm text-gray-500 hover:text-black">Berita & Pameran</a>           
+          </li>
+          <li><a href="kontak.html" class="text-sm text-gray-500 hover:text-black">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+  
+  <!-- dropdown produk -->
+    <div class="hidden dropdown-produk bg-gray-50 border-t-2 absolute top-30 left-0 right-0 z-10">
+      <div class="container mx-auto py-2">
+        <ul class="flex space-x-10 justify-end">
+          <li><a href="produkHome.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+          <li><a href="produk.html" class="text-sm text-gray-500 hover:text-black">Vending</a></li>
+          <li><a href="produkKopiKantor.html" class="text-sm text-gray-500 hover:text-black">Kopi Kantor</a></li>
+          <li><a href="produkHoReCa.html" class="text-sm text-gray-500 hover:text-black">Ho.Re.Ca</a></li>
+          <li><a href="produkToGo.html" class="text-sm text-gray-500 hover:text-black">Coffee To Go</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- end dropdown produk -->
+  
+  
+  <!-- sidebar -->
+  <div class="navbar-menu relative z-50 hidden">
+  <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+  <nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+      <div class="flex items-center mb-8">
+          <a class="mr-auto text-3xl font-bold leading-none" href="#">
+            <div class="logo">
+              <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+            </div>
+          </a>
+          <button class="navbar-close">
+              <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+      </div>
+      <div>
+          <ul>
+              <li class="mb-1">
+                  <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="index.html">Home</a>
+              </li>
+              <li class="mb-1">
+                  <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="about.html">Tentang Kami</a>
+              </li>
+              <li class="mb-1 produk-button">
+                  <div class="p-4 flex justify-between item bg-center">
+                    <a class="block text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Produk</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48">
+                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                    </svg>
+                  </div>
+                  <div class="ml-4 pl-2 border-slate-300 border-l-2 hidden produk-dropdown">
+                    <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHome.html">Home</a>
+                    <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Vending</a>
+                    <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkKopiKantor.html">Kopi Kantor</a>
+                    <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHoReCa.html">Ho.Re.Ca</a>
+                    <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkToGo.html">Coffee To Go</a>
+                  </div>
+              </li>
+              <li class="mb-1">
+                  <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="teknologi.html">Teknologi</a>
+              </li>
+              <li class="mb-1">
+                  <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="news.html">Berita & Pameran</a>
+              </li>
+              <li class="mb-1">
+                  <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="kontak.html">Hubungi Kami</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  </div>
+  
+  </nav>
+  <!-- end navbar -->
+  
+
+
+<!-- main -->
+<div class="flex overflow-hidden flex-col bg-white">
+    <img 
+      loading="lazy" 
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/f374a487ac09493a69a83171d4eb759a0fa922d31bb52ebb11d32eadb15269e3?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+      alt="Hero Banner" 
+      class="object-contain w-full aspect-[3.06] max-md:max-w-full max-sm:hidden" 
+    />
+
+    <!-- Section 1 -->
+    <section aria-label="Precision Grinders Section" class="flex max-sm:flex-wrap justify-between items-center pr-20 pl-20 w-full text-white uppercase bg-black max-md:px-5 max-md:max-w-full max-sm:gap-5 max-sm:pt-5">
+        <div class="flex flex-col self-stretch my-auto  w-[501px] max-md:max-w-full max-lg:scale-75">
+          <h2 class="text-4xl font-bold leading-none max-md:max-w-full max-sm:text-2xl">
+            Precision Grinders
+          </h2>
+          <p class="mt-4 text-sm leading-6 max-md:max-w-full max-sm:text-xs">
+            The grinder is a vital component of a commercial coffee machine. It ensures consistent, fresh, and high-quality coffee that meets the expectations of customers.
+          </p>
+        </div>
+        <img 
+          loading="lazy" 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/cbf0aa74d654ff64deafff651b4e271f752cfdc5f6b356007e84b6778a1b2afc?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+          alt="Precision Grinder Machine" 
+          class="object-contain self-stretch my-auto aspect-[1.62] min-w-[240px] w-[523px] max-md:max-w-full" 
+        />
+      </section>
+  
+    <section class="flex gap-5 max-md:flex-col mx-10 lg:mt-10">
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/64f0c4560ae55e6df1c48bbaa0145f902d2729ac23f5c07a39113a5418e93d1f?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86"
+            alt="Commercial coffee grinder machine"
+            class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+          />
+        </div>
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+          <div
+            class="flex flex-col self-stretch my-auto text-black uppercase max-md:mt-10 max-md:max-w-full"
+          >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+              Precision Grinders
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+              The grinder is a vital component of a commercial coffee machine. It
+              ensures consistent, fresh, and high-quality coffee that meets the
+              expectations of customers.
+            </p>
+          </div>
+        </div>
+    </section>
+
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+          <div
+            class="flex flex-col self-stretch my-auto text-black uppercase max-md:mt-10 max-md:max-w-full"
+          >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Ditting EK7 Grinder
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                64mm flat burr, special steel Lifetime: 150000 times
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d7d7615bfd9c3020c42f51d08241aed415ccdc6ba97a1a69ec51addcd3ece04?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+            alt="Commercial coffee grinder machine"
+            class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+          />
+        </div>
+    </section>
+
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/caf8c2a5b8cc6f9b0b7858c2206e4764524e39019c1a040c2c8a19019409c32d?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+            alt="Commercial coffee grinder machine"
+            class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+          />
+        </div>
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+          <div
+            class="flex flex-col self-stretch my-auto text-black uppercase max-md:mt-10 max-md:max-w-full"
+          >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Jetinno PGH64 Grinder
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                64mm flat burr, special steel Lifetime: 125000 times
+            </p>
+          </div>
+        </div>
+    </section>
+
+
+  <!-- Section 2 -->
+  <section aria-label="Precision Grinders Section" class="flex max-sm:flex-wrap justify-between items-center mt-10 pr-20 pl-20 w-full text-white uppercase bg-black max-md:px-5 max-md:max-w-full max-sm:gap-5 max-sm:pt-5">
+    <div class="flex flex-col self-stretch my-auto  w-[501px] max-md:max-w-full max-lg:scale-75">
+      <h2 class="text-4xl font-bold leading-none max-md:max-w-full max-sm:text-2xl">
+        Innovative Brewers
+      </h2>
+      <p class="mt-4 text-sm leading-6 max-md:max-w-full max-sm:text-xs">
+        The brewer is a critical component of a professional coffee machine that extracts the flavor, aroma, and oils from coffee grounds. It allows for precise control over the brewing process and enhances the flavor profile of coffee.
+      </p>
+    </div>
+    <img 
+      loading="lazy" 
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/3682fcd9584c26c07dd85ec140fa82e329bae13d4b971ef51a5c9e87de507200?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+      alt="Precision Grinder Machine" 
+      class="object-contain self-stretch my-auto aspect-[1.62] min-w-[240px] w-[523px] max-md:max-w-full" 
+    />
+  </section>
+  
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+        <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/caf8c2a5b8cc6f9b0b7858c2206e4764524e39019c1a040c2c8a19019409c32d?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+            alt="Commercial coffee grinder machine"
+            class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+        />
+        </div>
+
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+        <div
+            class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+        >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Patented ES Brewer
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                <ul>
+                    <li>Pre-infusion and antigravity extraction PTC</li>
+                    <li>heaters in brewing chambers</li>
+                    <li>Selectable chambers for 14g and 20g dose</li>
+                    <li>Detachable brewing chamber design</li>
+                    <li>Lifetime: 125,000 times</li>
+                </ul>
+            </p>
+        </div>
+        </div>
+    </section>
+
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+        <div
+            class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+        >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Filter Brewer
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                <ul>
+                    <li>Supports both coffee and tea by using different filter mesh supports</li>
+                    <li>6-14g brewing of coffee powder/tea powder</li>
+                    <li>Spray brewing and pre-infusion technology for saturated extraction</li>
+                    <li>Detachable brewing chamber design</li>
+                </ul>
+            </p>
+        </div>
+        </div>
+
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/587385782cfc15082f58632a150ca5b1961f8297d14acfb000d766df14274f07?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                alt="Commercial coffee grinder machine"
+                class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+            />
+        </div>
+    </section>
+
+  
+    <!-- Section 3 -->
+    <section aria-label="Precision Grinders Section" class="flex max-sm:flex-wrap justify-between items-center mt-10 pr-20 pl-20 w-full text-white uppercase bg-black max-md:px-5 max-md:max-w-full max-sm:gap-5 max-sm:pt-5">
+        <div class="flex flex-col self-stretch my-auto  w-[501px] max-md:max-w-full max-lg:scale-75">
+          <h2 class="text-4xl font-bold leading-none max-md:max-w-full max-sm:text-2xl">
+            Powerful Water and Ice System
+          </h2>
+          <p class="mt-4 text-sm leading-6 max-md:max-w-full max-sm:text-xs">
+            The water system is fundamental for coffee production, which is operated by powerful boilers and pumps, ensures efficient and stable water for the brewing process, while powerful ice maker allow for a variety of ice drink recipes.
+          </p>
+        </div>
+        <img 
+          loading="lazy" 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc65d2b186bd1c4556fc2df0e55a52dcc38f681081f779735c771745ed3de9f9?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+          alt="Precision Grinder Machine" 
+          class="object-contain self-stretch my-auto aspect-[1.62] min-w-[240px] w-[523px] max-md:max-w-full" 
+        />
+      </section>
+  
+      <!-- content -->
+    <section aria-label="Water System Details" class="flex flex-col px-20 py-10 w-full text-black uppercase max-md:px-5 max-md:max-w-full">
+      <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f5f18345b35c7216de192405a32b5ad1ae0eb47ce8a9e3475d26a2b01f3027?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                alt="Commercial coffee grinder machine"
+                class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+            />
+        </div>
+
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+        <div
+            class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+        >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Hot water
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                <ul>
+                    <li>2700W heating power, continuous and stable water</li>
+                    <li>Sweden Backerths 700ml stainless boiler</li>
+                    <li>US EMERSON STB temperature control switch.</li>
+                    <li>Japan OMRON temperature/pressure sensor</li>
+                    <li>Italy ULKA high -pressure electromagnetic pump</li>
+                    <li>German made valves and fittings</li>
+                </ul>
+            </p>
+        </div>
+        </div>
+    </section>
+    
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+        <div
+            class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+        >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Water Cooler
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                <ul>
+                    <li>Stable continuous output of cool water</li>
+                    <li>0-6.5 ℃ water temperature, 17mL/s flow</li>
+                    <li>Apple R134a/R600a coolant</li>
+                    <li>German instant cooling technology</li>
+                </ul>
+            </p>
+        </div>
+        </div>
+
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/587385782cfc15082f58632a150ca5b1961f8297d14acfb000d766df14274f07?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                alt="Commercial coffee grinder machine"
+                class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+            />
+        </div>
+    </section>
+
+
+    <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+        <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f5f18345b35c7216de192405a32b5ad1ae0eb47ce8a9e3475d26a2b01f3027?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                alt="Commercial coffee grinder machine"
+                class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+            />
+        </div>
+
+        <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+        <div
+            class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+        >
+            <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                Ice maker
+            </h2>
+            <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                <ul>
+                    <li>Brazil Embarco compressor, Japan evaporator</li>
+                    <li>Built-in precise ice scale</li>
+                    <li>1.5kg storage volume, daily output 72kg</li>
+                    <li>Manual cleaning</li>
+                    <li>Auto status detection</li>
+                </ul>
+            </p>
+        </div>
+        </div>
+    </section>
+
+    </section>
+  
+    <!-- Section 4 -->
+    <section aria-label="Precision Grinders Section" class="flex max-sm:flex-wrap justify-between items-center mt-10 pr-20 pl-20 w-full text-white uppercase bg-black max-md:px-5 max-md:max-w-full max-sm:gap-5 max-sm:pt-5">
+        <div class="flex flex-col self-stretch my-auto  w-[501px] max-md:max-w-full max-lg:scale-75">
+          <h2 class="text-4xl font-bold leading-none max-md:max-w-full max-sm:text-2xl">
+            Smart Milk Frother
+          </h2>
+          <p class="mt-4 text-sm leading-6 max-md:max-w-full max-sm:text-xs">
+            Create a wide range of delicious and visually appealing fresh milk flavor coffee drinks with ease.
+          </p>
+        </div>
+        <img 
+          loading="lazy" 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3384362fd5cb8804210a43c16839a3582ad5d9def74418c6de44894ccf9df948?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86"
+          alt="Precision Grinder Machine" 
+          class="object-contain self-stretch my-auto aspect-[1.62] min-w-[240px] w-[523px] max-md:max-w-full" 
+        />
+      </section>
+  
+      <!-- content -->
+    <section aria-label="Milk Frother Details" class="flex flex-col px-20 py-10 w-full text-black uppercase max-md:px-5 max-md:max-w-full">
+        <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+            <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+                <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/01177193b60db254a9702977af5fdbe8db7f9d9d7953e412f9e3b42ae5500a47?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                    alt="Commercial coffee grinder machine"
+                    class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+                />
+            </div>
+    
+            <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+            <div
+                class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+            >
+                <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                    FM Milk Frother
+                </h2>
+                <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                    <ul>
+                        <li>Hot and cold milk foam</li>
+                        <li>Italian Fluid-o-tech professional milk pump</li>
+                        <li>Intelligent milk status detection and alarm</li>
+                        <li>Milk system auto cleaning</li>
+                        <li>Modular design, easy to disassemble and maintain</li>
+                    </ul>
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+            <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+            <div
+                class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+            >
+                <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                    FV Milk Frother
+                </h2>
+                <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                    <ul>
+                        <li>Hot and cold milk foam</li>
+                        <li>Italian Fluid-o-tech professional milk pump</li>
+                        <li>Intelligent milk status detection and alarm</li>
+                        <li>Milk system auto cleaning</li>
+                        <li>Modular design, easy to disassemble and maintain</li>
+                    </ul>
+                </p>
+            </div>
+            </div>
+            <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+                <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5c5bb3dd4d04268a7cf2a48e5d789fe0d0d2769b82405a26c767df4a6721425?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86"
+                    alt="Commercial coffee grinder machine"
+                    class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+                />
+            </div>
+        </section>
+    </section>
+
+
+    <!-- Section 5 -->
+    <section aria-label="Precision Grinders Section" class="flex max-sm:flex-wrap justify-between items-center mt-10 pr-20 pl-20 w-full text-white uppercase bg-black max-md:px-5 max-md:max-w-full max-sm:gap-5 max-sm:pt-5">
+        <div class="flex flex-col self-stretch my-auto  w-[501px] max-md:max-w-full max-lg:scale-75">
+          <h2 class="text-4xl font-bold leading-none max-md:max-w-full max-sm:text-2xl">
+            Cup Dispensing and Capping
+          </h2>
+          <p class="mt-4 text-sm leading-6 max-md:max-w-full max-sm:text-xs">
+            For coffee vending machines, the cup dispensing and capping system are crucial as it ensures accurate, spill-free, and hygienic dispensing of beverages for a high-quality customer experience.
+          </p>
+        </div>
+        <img 
+          loading="lazy" 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/4922672d9af9de2318cec84b3f825f00c363fc1b1cf35f531314587b587c7bd7?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+          alt="Precision Grinder Machine" 
+          class="object-contain self-stretch my-auto aspect-[1.62] min-w-[240px] w-[523px] max-md:max-w-full" 
+        />
+    </section>
+  
+    <section aria-label="Milk Frother Details" class="flex flex-col px-20 py-10 w-full text-black uppercase max-md:px-5 max-md:max-w-full">
+        <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+            <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+                <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/3227bc5b11261fcde60411d56da2eccb3bd4c3a5a8ede613079f8bd066273098?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                    alt="Commercial coffee grinder machine"
+                    class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+                />
+            </div>
+    
+            <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+            <div
+                class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+            >
+                <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                    Cup Dispensing
+                </h2>
+                <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                    <ul>
+                        <li>Smart cup dispensing with 5 columns</li>
+                        <li>Real time cup status monitoring</li>
+                    </ul>
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <section class="flex gap-5 max-md:flex-col mx-10 mt-10">
+            <div class="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+            <div
+                class="flex flex-col self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full"
+            >
+                <h2 class="text-2xl font-bold leading-10 max-md:max-w-full">
+                    Cup Lid Dispensing and Capping
+                </h2>
+                <p class="mt-4 text-sm leading-6 max-md:max-w-full">
+                    <ul>
+                        <li>Cap lid auto dispensing</li>
+                        <li>Cup lid status monitoring</li>
+                    </ul>
+                </p>
+            </div>
+            </div>
+            <div class="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+                <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a792350680988809f60ce65a6a9afcbf39e46b8c0daad76a00df866db1ca18b?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" 
+                    alt="Commercial coffee grinder machine"
+                    class="object-contain grow w-full rounded-lg aspect-[1.44] max-md:mt-10 max-md:max-w-full"
+                />
+            </div>
+        </section>
+    </section>
+  </div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="w-full">
+  <div class="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!--Grid-->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+              <a href="#"  class="flex justify-center lg:justify-start">
+                 <img src="../src/css/img/jetinno.png" alt="">
+              </a>
+              <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">We manufacture full series coffee machines for vending/horeca/ocs deployment.</p>
+              <a href="javascript:;"  class="py-2.5 px-5 block w-fit border-2 border-black shadow-sm text-sm text-black mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                  Kontak Kami
+              </a>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Informasi</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Company</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Produk</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Berita & Pameran</a></li>
+                  <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kontak Kami</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Kategori Produk</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kopi Kantor</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Ho.Re.Ca</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Vending</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Coffee To Go</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Hubungi Kami</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Address: </span>4th Floor, Dehao Innovative Park, No.2, Ruitai Rd, Huangpu District, Guangzhou, Guangdong, P.R.C</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Phone: </span>+86-18620946175</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Whatsapp: </span>+86-15813394936</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Email: </span>inquiry@jetinno.com</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          
+      </div>
+      <!--Grid-->
+      <div class="py-7 border-t border-gray-200">
+          <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+              <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/"></a> 2024 Jetinno.</span>
+              <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script src="js/scriptTeknologi.js"></script>
+</body>
+</html>

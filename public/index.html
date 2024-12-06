@@ -1,0 +1,713 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="css/style.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+</head>
+<body>
+<!-- navbar -->
+<nav class="bg-white">
+  <div class="container flex justify-between items-center mx-auto py-4">
+    <div class="logo">
+      <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+    </div>
+
+    <!-- burger -->
+    <div class="lg:hidden">
+      <button class="navbar-burger flex items-center text-black p-3">
+          <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+      </button>
+     </div>
+
+    <div class="sosmed items-center space-x-5 hidden lg:flex">
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+      </a>
+      <div class="search-box border rounded-full bg-white border-black text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-1 px-3 items-center">
+        <input name="lname" id="txtSearch" placeholder="Search" value="">
+        <button class="searchbtn" onclick="PSearch()" id="btnSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>            
+        </button>
+       </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 hidden lg:block">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="index.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="about.html" class="text-sm text-gray-500 hover:text-black">Tentang Kami</a></li>
+        <li class="flex items-center space-x-2 dropdown-button-produk">
+          <a href="produk.html" class="text-sm text-gray-500  hover:text-black">produk</a>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>            
+        </li>
+        <li><a href="teknologi.html" class="text-sm text-gray-500 hover:text-black">Teknologi</a></li>
+        <li class="flex items-center space-x-2">
+          <a href="news.html" class="text-sm text-gray-500 hover:text-black">Berita & Pameran</a>           
+        </li>
+        <li><a href="kontak.html" class="text-sm text-gray-500 hover:text-black">Hubungi Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- dropdown produk -->
+  <div class="hidden dropdown-produk bg-gray-50 border-t-2 absolute top-30 left-0 right-0 z-10">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="produkHome.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="produk.html" class="text-sm text-gray-500 hover:text-black">Vending</a></li>
+        <li><a href="produkKopiKantor.html" class="text-sm text-gray-500 hover:text-black">Kopi Kantor</a></li>
+        <li><a href="produkHoReCa.html" class="text-sm text-gray-500 hover:text-black">Ho.Re.Ca</a></li>
+        <li><a href="produkToGo.html" class="text-sm text-gray-500 hover:text-black">Coffee To Go</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- end dropdown produk -->
+
+
+<!-- sidebar -->
+<div class="navbar-menu relative z-50 hidden">
+<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+    <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <div class="logo">
+            <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+          </div>
+        </a>
+        <button class="navbar-close">
+            <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div>
+        <ul>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="index.html">Home</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="mb-1 produk-button">
+                <div class="p-4 flex justify-between item bg-center">
+                  <a class="block text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Produk</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                  </svg>
+                </div>
+                <div class="ml-4 pl-2 border-slate-300 border-l-2 hidden produk-dropdown">
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHome.html">Home</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Vending</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkKopiKantor.html">Kopi Kantor</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHoReCa.html">Ho.Re.Ca</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkToGo.html">Coffee To Go</a>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="teknologi.html">Teknologi</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="news.html">Berita & Pameran</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="kontak.html">Hubungi Kami</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+</nav>
+<!-- end navbar -->
+
+
+
+
+
+
+
+<!-- banner -->
+ <div class="slider relative">
+    <div class="relative slide w-full bg-black hidden max-sm:h-screen" data-twe-carousel-fade">
+      <img src="../src/css/img/c-1.png" alt="" class="block w-full">
+      <div
+      class="absolute max-lg:scale-90 inset-x-[15%] bottom-5 hidden py-5 mb-5 lg:mb-20 space-y-5 text-center text-white md:block max-sm:block max-sm:mb-32">
+        <img src="../src/css/img/slide-home-1.png" alt="" class="block mx-auto">
+        <div class="text-header">
+          <h5 class="uppercase text-2xl font-title break-all max-sm:text-base">Kenyamanan dan kebersamaan</h5>
+          <h5 class="uppercase text-2xl font-title break-all font-bold max-sm:text-base">Di dalam rumah anda</h5>
+        </div>
+        <button>
+          <div class="text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+            <a href="">Eksplor</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="relative slide w-full bg-black hidden max-sm:h-screen" data-twe-carousel-fade">
+      <img src="../src/css/img/c-2.png" alt="" class="block w-full">
+      <div
+      class="absolute max-lg:scale-90 inset-x-[15%] bottom-5 hidden py-5 mb-5 lg:mb-20 space-y-5 text-center text-white md:block max-sm:block max-sm:mb-32">
+        <img src="../src/css/img/slide-home-2.png" alt="" class="block mx-auto">
+        <div class="text-header">
+          <h5 class="uppercase text-2xl font-title break-all max-sm:text-base">mulai produktivitas dan dengan</h5>
+          <h5 class="uppercase text-2xl font-title break-all font-bold max-sm:text-base">semangat, komitmen, dan secangkir kopi</h5>
+        </div>
+        <button>
+          <div class="text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+            <a href="">Eksplor</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="relative slide w-full bg-black hidden max-sm:h-screen" data-twe-carousel-fade">
+      <img src="../src/css/img/c-3.png" alt="" class="block w-full">
+      <div
+        class="absolute max-lg:scale-90 inset-x-[15%] bottom-5 hidden py-5 mb-5 lg:mb-20 space-y-5 text-center text-white md:block max-sm:block max-sm:mb-32">
+        <img src="../src/css/img/slide-home-3.png" alt="" class="block mx-auto">
+        <div class="text-header">
+          <h5 class="uppercase text-2xl font-title break-all">menemani perjalanan anda, </h5>
+          <h5 class="uppercase text-2xl font-title break-all font-bold">dimanapun dan kapanpun</h5>
+        </div>
+        <button>
+          <div class="text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+            <a href="">Eksplor</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="absolute w-full flex justify-center space-x-4 inset-x-0 bottom-0 z-[1] mb-8">
+      <span class="dot h-2 w-2 bg-slate-400 inline-block rounded-full max-sm:hidden" onclick="currentSlide(1)"></span> 
+      <span class="dot h-2 w-2 bg-slate-400 inline-block rounded-full max-sm:hidden" onclick="currentSlide(2)"></span> 
+      <span class="dot h-2 w-2 bg-slate-400 inline-block rounded-full max-sm:hidden" onclick="currentSlide(3)"></span> 
+    </div>
+ </div>
+<!-- endbanner -->
+
+
+<!-- kategori -->
+ <div class="w-full">
+  <div class="container mx-auto mt-16">
+    <div class="flex flex-col justify-center text-center space-y-4 max-sm:mx-5">
+      <h1 class="text-3xl font-title font-bold uppercase">produk kami</h1>
+      <p>jelajahi pengalaman kopi yang didedikasikan untuk Anda</p>
+      <button class="border border-black rounded-full flex items-center space-x-2 px-3 py-1 w-max mx-auto">
+        <a href="" class="text-md">Lihat lebih banyak</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- pertama -->
+  <div class="flex items-center justify-center mt-14">
+    <div class="md:container gap-5">
+      <div class="rounded-lg max-md:rounded-none group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-black/30">
+        <div class="h-full w-full max-sm:h-56">
+           <img class="h-full w-full object-cover transition-transform duration-500  group-hover:scale-125" src="../src/css/img/kat-home.png" alt="" />
+        </div>
+  
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+  
+        <div class="text-white space-y-3 absolute inset-0 flex translate-y-[5%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 max-md:scale-50  max-lg:scale-50">
+          <div class= "flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></svg>
+          </div>
+          <img src="../src/css/img/produk-home.png" alt="" class="mx-auto">
+          <h1 class="text-3xl">Home</h1>
+          <button>
+            <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+              <a href="">Eksplor</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- kedua -->
+<div class="flex items-center justify-center sm:mt-4">
+  <div class="md:container gap-5">
+    <div class="rounded-lg max-md:rounded-none group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-black/30">
+      <div class="h-full w-full max-sm:h-56">
+         <img class="h-full w-full object-cover transition-transform duration-500  group-hover:scale-125" src="../src/css/img/kat-off.png" alt="" />
+      </div>
+
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+
+      <div class="text-white space-y-3 absolute inset-0 flex translate-y-[5%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 max-md:scale-50  max-lg:scale-50">
+        <div class= "flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 7V3h6v4M9 7L7 19l5 2l5-2l-2-12M9 7h6m-3.5 5.5H9"/></svg>
+        </div>
+        <img src="../src/css/img/produk-kantor.png" alt="" class="mx-auto">
+        <h1 class="text-3xl">Kopi Kantor</h1>
+        <button>
+          <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+            <a href="">Eksplor</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ketiga -->
+<div class="flex items-center justify-center sm:mt-4">
+  <div class="md:container gap-5">
+    <div class="rounded-lg max-md:rounded-none group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-black/30">
+      <div class="h-full w-full max-sm:h-56">
+         <img class="h-full w-full object-cover transition-transform duration-500  group-hover:scale-125" src="../src/css/img/kat-hor.png" alt="" />
+      </div>
+
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+
+      <div class="text-white space-y-3 absolute inset-0 flex translate-y-[5%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 max-md:scale-50  max-lg:scale-50">
+        <div class= "flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M8 2h8M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.47 6.47 0 0 1 5 0a6.47 6.47 0 0 0 5 0"/></g></svg>
+        </div>
+        <img src="../src/css/img/produk-horeca.png" alt="" class="mx-auto">
+        <h1 class="text-3xl">Ho.Re.Ca</h1>
+        <button>
+          <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+            <a href="">Eksplor</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Keempat -->
+<div class="flex items-center justify-center sm:mt-4">
+<div class="md:container gap-5">
+  <div class="rounded-lg max-md:rounded-none group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-black/30">
+    <div class="h-full w-full max-sm:h-56">
+       <img class="h-full w-full object-cover transition-transform duration-500  group-hover:scale-125" src="../src/css/img/kan-ven.png" alt="" />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+
+    <div class="text-white space-y-3 absolute inset-0 flex translate-y-[5%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 max-md:scale-50  max-lg:scale-50">
+      <div class= "flex justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M100 29v454h312V29zm18 18h210v338H118zm226 16h50v66h-50zm18 18v30h14V81zm-203 7v23h-16v18h160v-18h-64V80l-16 6l-6 25h-26V88zm194 55h32v18h-32zm-90 10.8c-5.4 0-10.1 3-12.8 6.7c-2.9 4.9-4.5 9.6-4.1 14.5H143v18h160v-18h-23.1c.3-5.1-1.6-11-4.1-14.5c-2.7-3.7-7.4-6.7-12.8-6.7m90 21.2h32v18h-32zm-194 41v23h-16v18h160v-18h-24v-23h-24v23h-32v-31h-16v31h-32v-15zm8 61.4c-6.1 0-10.8 3.9-13.3 8c-3.2 6.1-4 11.5-3.5 17.6H143v18h160v-18h-64v-23h-32v23h-23.2c.6-6-.7-13-3.5-17.6c-2.5-4.1-7.2-8-13.3-8M353 351h32v18h-32zm-235 52h210v62H118zm18 18v26h174v-26z"/></svg>
+      </div>
+      <img src="../src/css/img/produk-vending.png" alt="" class="mx-auto">
+      <h1 class="text-3xl">Vending</h1>
+      <button>
+        <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+          <a href="">Eksplor</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Kelima -->
+<div class="flex items-center justify-center sm:mt-4">
+<div class="md:container gap-5">
+  <div class="rounded-lg max-md:rounded-none group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-black/30">
+    <div class="h-full w-full max-sm:h-56">
+       <img class="h-full w-full object-cover transition-transform duration-500  group-hover:scale-125" src="../src/css/img/kat-go.png" alt="" />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+
+    <div class="text-white space-y-3 absolute inset-0 flex translate-y-[5%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 max-md:scale-50  max-lg:scale-50">
+      <div class= "flex justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M235.58 128.84L160 91.06V48a32 32 0 0 0-64 0v43.06l-75.58 37.78A8 8 0 0 0 16 136v32a8 8 0 0 0 9.57 7.84L96 161.76v18.93l-13.66 13.65A8 8 0 0 0 80 200v32a8 8 0 0 0 11 7.43l37-14.81l37 14.81a8 8 0 0 0 11-7.43v-32a8 8 0 0 0-2.34-5.66L160 180.69v-18.93l70.43 14.08A8 8 0 0 0 240 168v-32a8 8 0 0 0-4.42-7.16M224 158.24l-70.43-14.08A8 8 0 0 0 144 152v32a8 8 0 0 0 2.34 5.66L160 203.31v16.87l-29-11.61a8 8 0 0 0-5.94 0L96 220.18v-16.87l13.66-13.65A8 8 0 0 0 112 184v-32a8 8 0 0 0-9.57-7.84L32 158.24v-17.3l75.58-37.78A8 8 0 0 0 112 96V48a16 16 0 0 1 32 0v48a8 8 0 0 0 4.42 7.16L224 140.94Z"/></svg>
+      </div>
+      <img src="../src/css/img/produk-go.png" alt="" class="mx-auto">
+      <h1 class="text-3xl">Coffee To Go</h1>
+      <button>
+        <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+          <a href="">Eksplor</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- endkategori -->
+
+
+
+<!-- Teknologi -->
+ <section class="flex items-center justify-center mt-20 max-md:mt-10">
+  <div class="h-full w-full relative">
+    <img src="../src/css/img/bg2.png" alt="" class="h-full w-full object-cover">
+
+    <div class="absolute inset-x-0 top-0 z-[1] mt-14 max-md:mt-5 text-center">
+      <h2 class="text-3xl max-sm:text-sm text-white font-title uppercase">eksplorasi</h2>
+      <h2 class="text-3xl max-sm:text-sm text-white font-title font-bold uppercase">Teknologi dan Inovasi</h2>
+      <button class="mt-2">
+        <div class="text-white text-sm btn btn-primary px-4 py-1 border border-white rounded-full flex items-center space-x-2">
+          <a href="" class="text-sm max-sm:text-xs">Eksplor</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5v2h6.59L4 18.59L5.41 20L17 8.41V15h2V5z"/></svg>
+        </div>
+      </button>
+    </div>
+
+    <div class="absolute inset-x-0 bottom-0 text-center space-y-3">
+      
+
+      <img src="../src/css/img/kopi.png" alt="" class="mx-auto max-md:h-32 max-lg:h-64">
+    </div>
+  </div>
+ </section>
+<!-- end Teknologi -->
+
+
+
+<!-- featured -->
+<div class="w-full relative mt-24 space-y-8">
+  <h1 class="text-3xl font-title font-bold uppercase text-center">Produk Unggulan</h1>
+
+  <div class="container swiper multiple-slide-carousel swiper-container relative">
+   <div class="swiper-wrapper mb-16">
+     
+    <!-- produk -->
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jltt-14.png" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Countertop Espresso Machine JLTT-14</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl852.png" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Best Fully Automatic Espresso Machine JL852</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+    
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl18.png" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Coffee Machine With Hot Water Dispenser JL18</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+    
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl28.png" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Touch Auto Coffee Machine JL28</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+    
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl500i.png" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Cold Coffee Machine JL500I</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl300.webp" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Coffee Vending Machine For Office JL300</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+
+    <div class="swiper-slide p-6 flex text-center">
+      <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" src="../src/css/img/jl500.webp" alt="blog">
+
+      <h1 class="line-clamp-2 mx-auto mb-8 text-md font-semibold leading-none tracking-tighter text-neutral-600 lg:text-xl">Floor Standing Coffee Machine With Dispenser JL500</h1>
+      <div class="mt-4">
+          <a href="#" class="inline-flex items-center font-regular text-amber-700 lg:mb-0 hover:text-neutral-600 border border-amber-700 px-8 py-1" title="read more"> More info » </a>
+      </div>
+    </div>
+
+  </div>
+   <div class="absolute flex justify-center items-center m-auto left-0 right-0 w-fit bottom-12">
+     <button id="slider-button-left" class="swiper-button-prev group !p-10 scale-50 flex justify-center items-center border border-solid border-black !w-12 !h-12 transition-all duration-500 rounded-full  hover:bg-slate-700 !-translate-x-24" data-carousel-prev>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M31 36L19 24l12-12"/></svg>
+     </button>
+     <button id="slider-button-right" class="swiper-button-next group !p-10 scale-50 flex justify-center items-center border border-solid border-black !w-12 !h-12 transition-all duration-500 rounded-full hover:bg-slate-700 !translate-x-24" data-carousel-next>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m19 12l12 12l-12 12"/></svg>
+     </button>
+   </div>
+  </div>
+  
+<!-- end featured -->
+
+
+
+<!-- about us  -->
+<section class="relative pt-20">
+  <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+      <div class="w-full h-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
+        <iframe class="lg:mx-0 w-full h-full max-lg:h-screen" src="https://www.youtube.com/embed/vrpNQYRAPAs" title="jetinno company video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
+              <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
+                  <h5 class="text-amber-700 text-md font-manrope leading-normal lg:text-start text-center">Tentang jetinno</h5>
+                  <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Kopi yang baik untuk menginspirasi hidup menjadi lebih baik.</h2>
+                  <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">Born in 2013, JETINNO is an intelligent equipment company focused on building commercial coffee machines and solutions that are needed for the market. We produce coffee machines for vending, HORECA and OCS deployments. Since its establishment, JETINNO has always committed to becoming a leading, technology-oriented and trustworthy coffee equipment manufacturer. As of today, we have 2 production centers, 4 research labs and 1 R&D center. With more than 60 professional engineers and 40,000 pcs machine annual production output, JETINNO empowers itself the ability of enhancing its global business presence. JETINNO dedicates itself to tech innovation of coffee equipment, so far it has over 80 technology patents in registration. Our coffee machines have been installed in more than 60 regions and countries, like Italy, Danmark, Spain. we now have 15 overseas major customers including La-cimbali, Nescafe, Lucking Coffee and Lamanti. With the vision of becoming a great coffee equipment maker, JETINNO stays true to its mission, consistently focuses on manufacturing exceptional coffee machines to bring more convenient and better coffee drinking experience for everyone. JETINNO believes that innovative coffee machine technologies can inspire life better.</p>
+              </div>
+        </div>
+       </div>
+  </div>
+</section>
+                                      
+<!-- end about us  -->
+
+
+
+
+<!-- Blog -->
+<section class="relative flex flex-col justify-center overflow-hidden py-6 sm:py-12">
+  <div class="min-h-28 ">
+    <div class="container mx-auto">
+      <p class="text-center">Artikel Kami</p>
+      <h2 class="font-bold text-center text-3xl text-slate-700 font-display">
+        TERBARU DARI JETINNO
+      </h2>
+
+      <div class="flex justify-center space-x-4 mt-4">
+        <div class="text-slate-500 hover:text-black transition-all duration-500">
+          <a href="">Berita</a>
+        </div>
+        <div class="text-slate-500 hover:text-black transition-all duration-500">
+          <a href="">Pameran</a>
+        </div>
+      </div>
+
+
+      <div class="grid lg:grid-cols-3 sm:grid-cols-3 mt-10 gap-4 mx-4 ">  
+
+
+        <div class="w-full overflow-hiddenm">
+          <img src="../src/css/img/blog1.png" class="object-cover h-52 w-full" alt="">
+          <div>
+            <h3 class="mt-1 font-bold text-lg pb-2 ">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+                Jetinno Shines At CAFERES JAPAN 2024</a>
+            </h3>
+
+            <p class="text-sm text-slate-500">
+              From July 16-18, 2024, the CAFERES JAPAN 2024 Expo was held at the Yokohama International Exhibition Centre in Tokyo,...
+            </p>
+            
+            <h1 class="pt-4 text-amber-700">
+              <a href="">Read more ></a>
+            </h1>
+          </div>
+        </div>
+
+        <div class="w-full overflow-hidden">
+          <img src="../src/css/img/blog1.png" class="object-cover h-52 w-full" alt="">
+          <div>
+            <h3 class="mt-1 font-bold text-lg pb-2 ">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+                Jetinno Shines At CAFERES JAPAN 2024</a>
+            </h3>
+
+            <p class="text-sm text-slate-500">
+              From July 16-18, 2024, the CAFERES JAPAN 2024 Expo was held at the Yokohama International Exhibition Centre in Tokyo,...
+            </p>
+            
+            <h1 class="pt-4 text-amber-700">
+              <a href="">Read more ></a>
+            </h1>
+          </div>
+        </div>
+
+        <div class="w-full overflow-hidden">
+          <img src="../src/css/img/blog1.png" class="object-cover h-52 w-full" alt="">
+          <div>
+            <h3 class="mt-1 font-bold text-lg pb-2 ">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+                Jetinno Shines At CAFERES JAPAN 2024</a>
+            </h3>
+
+            <p class="text-sm text-slate-500">
+              From July 16-18, 2024, the CAFERES JAPAN 2024 Expo was held at the Yokohama International Exhibition Centre in Tokyo,...
+            </p>
+            
+            <h1 class="pt-4 text-amber-700">
+              <a href="">Read more ></a>
+            </h1>
+          </div>
+        </div>
+
+
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+<!-- end Blog -->
+
+
+
+<!-- honor -->
+<div class="inline-flex w-full flex-nowrap overflow-hidden bg-white [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+  <ul class="brands-wrapper">
+    <li>
+      <img src="../src/css/img/honor/image.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-1.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-2.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-3.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-4.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-5.png" width="250" height="100" />
+    </li>
+    
+  </ul>
+  <ul class="brands-wrapper" aria-hidden="true">
+    <li>
+      <img src="../src/css/img/honor/image.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-1.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-2.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-3.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-4.png" width="250" height="100" />
+    </li>
+    <li>
+      <img src="../src/css/img/honor/image-5.png" width="250" height="100" />
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="w-full">
+  <div class="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!--Grid-->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+              <a href="#"  class="flex justify-center lg:justify-start">
+                 <img src="../src/css/img/jetinno.png" alt="">
+              </a>
+              <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">We manufacture full series coffee machines for vending/horeca/ocs deployment.</p>
+              <a href="javascript:;"  class="py-2.5 px-5 block w-fit border-2 border-black shadow-sm text-sm text-black mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                  Kontak Kami
+              </a>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Informasi</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Company</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Produk</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Berita & Pameran</a></li>
+                  <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kontak Kami</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Kategori Produk</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kopi Kantor</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Ho.Re.Ca</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Vending</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Coffee To Go</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Hubungi Kami</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Address: </span>4th Floor, Dehao Innovative Park, No.2, Ruitai Rd, Huangpu District, Guangzhou, Guangdong, P.R.C</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Phone: </span>+86-18620946175</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Whatsapp: </span>+86-15813394936</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Email: </span>inquiry@jetinno.com</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          
+      </div>
+      <!--Grid-->
+      <div class="py-7 border-t border-gray-200">
+          <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+              <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/"></a> 2024 Jetinno.</span>
+              <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+                                      
+ 
+
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

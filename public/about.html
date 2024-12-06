@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="css/style.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+</head>
+<body>
+<<!-- navbar -->
+<nav class="bg-white">
+  <div class="container flex justify-between items-center mx-auto py-4">
+    <div class="logo">
+      <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+    </div>
+
+    <!-- burger -->
+    <div class="lg:hidden">
+      <button class="navbar-burger flex items-center text-black p-3">
+          <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+      </button>
+     </div>
+
+    <div class="sosmed items-center space-x-5 hidden lg:flex">
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+      </a>
+      <a href="">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+      </a>
+      <div class="search-box border rounded-full bg-white border-black text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-1 px-3 items-center">
+        <input name="lname" id="txtSearch" placeholder="Search" value="">
+        <button class="searchbtn" onclick="PSearch()" id="btnSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>            
+        </button>
+       </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 hidden lg:block">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="index.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="about.html" class="text-sm text-gray-500 hover:text-black">Tentang Kami</a></li>
+        <li class="flex items-center space-x-2 dropdown-button-produk">
+          <a href="produk.html" class="text-sm text-gray-500  hover:text-black">produk</a>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>            
+        </li>
+        <li><a href="teknologi.html" class="text-sm text-gray-500 hover:text-black">Teknologi</a></li>
+        <li class="flex items-center space-x-2">
+          <a href="news.html" class="text-sm text-gray-500 hover:text-black">Berita & Pameran</a>           
+        </li>
+        <li><a href="kontak.html" class="text-sm text-gray-500 hover:text-black">Hubungi Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- dropdown produk -->
+  <div class="hidden dropdown-produk bg-gray-50 border-t-2 absolute top-30 left-0 right-0 z-10">
+    <div class="container mx-auto py-2">
+      <ul class="flex space-x-10 justify-end">
+        <li><a href="produkHome.html" class="text-sm text-gray-500 hover:text-black">Home</a></li>
+        <li><a href="produk.html" class="text-sm text-gray-500 hover:text-black">Vending</a></li>
+        <li><a href="produkKopiKantor.html" class="text-sm text-gray-500 hover:text-black">Kopi Kantor</a></li>
+        <li><a href="produkHoReCa.html" class="text-sm text-gray-500 hover:text-black">Ho.Re.Ca</a></li>
+        <li><a href="produkToGo.html" class="text-sm text-gray-500 hover:text-black">Coffee To Go</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- end dropdown produk -->
+
+
+<!-- sidebar -->
+<div class="navbar-menu relative z-50 hidden">
+<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+    <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <div class="logo">
+            <img src="../src/css/img/jetinno.webp" alt="Logo" class=" mx-5 w-40 max-md:w-32">
+          </div>
+        </a>
+        <button class="navbar-close">
+            <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div>
+        <ul>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="index.html">Home</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="mb-1 produk-button">
+                <div class="p-4 flex justify-between item bg-center">
+                  <a class="block text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Produk</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                  </svg>
+                </div>
+                <div class="ml-4 pl-2 border-slate-300 border-l-2 hidden produk-dropdown">
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHome.html">Home</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produk.html">Vending</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkKopiKantor.html">Kopi Kantor</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkHoReCa.html">Ho.Re.Ca</a>
+                  <a class="block m-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded" href="produkToGo.html">Coffee To Go</a>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="teknologi.html">Teknologi</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="news.html">Berita & Pameran</a>
+            </li>
+            <li class="mb-1">
+                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="kontak.html">Hubungi Kami</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+</nav>
+<!-- end navbar -->
+
+
+
+
+<div class="flex overflow-hidden flex-col bg-white">
+  <div class="flex flex-col w-full max-md:max-w-full">
+
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0952f559114f6490dff9f6937cabd926a2617637dc3d8c7c257f113e93aa3a82?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Coffee machine showcase" class="object-contain w-full aspect-[3.89] max-md:max-w-full max-md:hidden" />
+
+  <main class="flex flex-col items-center px-16 mt-3 w-full max-md:px-5 max-md:max-w-full">
+    <div aria-label="Breadcrumb" class="w-full max-md:hidden">
+      <ol class="flex gap-1 items-start text-sm font-medium leading-8 text-zinc-800">
+        <li><a href="#" class="hover:text-yellow-700">Home</a></li>
+        <li aria-hidden="true"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5378583dbdb1dacbde114002a8c2fd9980e45eab81d57db57b13f8aa08571782?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" /></li>
+        <li aria-current="page">Tentang Kami</li>
+      </ol>
+    </div>
+
+    
+    <section class="relative">
+      <h1 class="pl-5 mb-10 self-start mt-8 text-3xl font-title font-bold text-black uppercase max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+        <span class="font-normal">Solusi penyedia</span>
+        <br />
+        Peralatan kopi komersial
+      </h1>
+
+      <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+          <div class="w-full h-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
+            <img class="lg:mx-0 w-full max-h-96 max-lg:h-screen" src="../src/css/img/about us.png" title="jetinno company video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></img>
+            
+            <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
+                  <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
+                      <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">Born in 2013, JETINNO is an intelligent equipment company focused on building commercial coffee machines and solutions that are needed for the market. We produce coffee machines for vending, HORECA and OCS deployments. Since its establishment, JETINNO has always committed to becoming a leading, technology-oriented and trustworthy coffee equipment manufacturer. As of today, we have 2 production centers, 4 research labs and 1 R&D center. With more than 60 professional engineers and 40,000 pcs machine annual production output, JETINNO empowers itself the ability of enhancing its global business presence. JETINNO dedicates itself to tech innovation of coffee equipment, so far it has over 80 technology patents in registration. Our coffee machines have been installed in more than 60 regions and countries, like Italy, Danmark, Spain. we now have 15 overseas major customers including La-cimbali, Nescafe, Lucking Coffee and Lamanti. With the vision of becoming a great coffee equipment maker, JETINNO believes that innovative coffee machine technologies can inspire life better.</p>
+                  </div>
+            </div>
+           </div>
+      </div>
+    </section>
+
+    <h2 class="mt-20 text-3xl leading-10 text-center text-black uppercase max-md:mt-10 max-md:max-w-full">
+      MENJADI PRODUSEN PERALATAN KOPI
+      <br />
+      <span class="font-bold">BERORIENTASI PADA TEKNOLOGI DAN DAPAT DIPERCAYA</span>
+    </h2>
+
+    <section class="flex flex-wrap gap-6 items-center mt-10 w-full text-2xl font-bold leading-loose text-center text-black uppercase max-w-[1242px] max-md:max-w-full">
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bd259f2df854a98a1de55ba70795238aba77d83e4518eb825917a03bd31e513?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="15 Years Experience" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3"><span class="font-bold">15</span> Years Experience</p>
+      </div>
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6b26e0efed2b1ec0c03b76b961f86e8872362339882cfcdc3454ed4128015867?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Production Workshop" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3">2 Production Workshop</p>
+      </div>
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/96d973f9703df5344cd67a1a209ce1c5819f8833ba759a927fb5f59707f9dff2?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Labs" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3">4 Labs</p>
+      </div>
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9b638babf27aac5edc04d1a3da55642a2316e94cd95fd98dae0194874722d89?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="R&D Center" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3">1 R&D Center</p>
+      </div>
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/998ff248069b03d2f21e9afbbdaa892734d83b8c6e7058c8686023eebe58ad13?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="R&D Engineers" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3">60 R&D Engineers</p>
+      </div>
+      <div class="flex flex-col grow shrink self-stretch my-auto w-80 min-w-[240px]">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fac14fb00ab434200c8d123dca2bad38a784f5d59aae33091a7809e94449d68c?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Annual Production Units" class="object-contain w-full aspect-[1.8]" />
+        <p class="mt-3">40.000 Units Annually</p>
+      </div>
+    </section>
+
+    <section class="mt-24 max-md:mt-10">
+      <h2 class="text-3xl leading-10 text-center text-black uppercase max-md:max-w-full">
+        MENJADI PRODUSEN PERALATAN KOPI
+        <br />
+        <span class="font-bold">BERORIENTASI PADA TEKNOLOGI DAN DAPAT DIPERCAYA</span>
+      </h2>
+
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f8134d1454ffd7812b8e8d030d9605619ec938c46e6de9a065faf1e0b5a8982?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Global presence map" class="object-contain mt-10 w-full aspect-[1.68] max-w-[1286px] max-md:max-w-full" />
+
+      <div class="flex flex-wrap gap-8 justify-center items-center mt-8 text-center text-yellow-700 max-md:max-w-full">
+        <div class="flex flex-col self-stretch my-auto w-[193px]">
+          <p class="text-6xl font-bold leading-none uppercase max-md:text-4xl">&gt;60</p>
+          <p class="mt-3.5 text-sm font-medium">Bisnis di Lebih dari 60 Negara</p>
+        </div>
+        <div aria-hidden="true" class="hidden md:block">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc50f0a67117e55811202c18c0acab3c1d09bd94c2ad82f583805901e421ed83?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-[0.03] w-[3px]" />
+        </div>
+        <div class="flex flex-col self-stretch my-auto w-[193px]">
+          <p class="text-6xl font-bold leading-none uppercase max-md:text-4xl">80+</p>
+          <p class="mt-3.5 text-sm font-medium">Paten Teknologi</p>
+        </div>
+        <div aria-hidden="true" class="hidden md:block">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc50f0a67117e55811202c18c0acab3c1d09bd94c2ad82f583805901e421ed83?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-[0.03] w-[3px]" />
+        </div>
+        <div class="flex flex-col self-stretch my-auto w-[193px]">
+          <p class="text-6xl font-bold leading-none uppercase max-md:text-4xl">15</p>
+          <p class="mt-3.5 text-sm font-medium">Pelanggan Utama Luar Negeri</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 text-sm leading-6 text-center text-black uppercase max-md:max-w-full">
+      <p>
+        JETINNO has good business presence globally, it has already sold its coffee machines to over 60 countries and regions worldwide, especially the Europe, the US and the Southeast Asia markets. Currently, we have established a show room in Denmark and physical store in the South Korea.
+      </p>
+      <p class="mt-6">
+        With the fast developing coffee-drinking trend around the globe, we can safely forecast that the global world coffee machine market will massively expand to a new height. JETINNO focuses its coffee machine manufacturing for Vending, Horeca and OCS application.
+      </p>
+    </section>
+
+    <section class="flex flex-wrap gap-7 justify-center items-center mt-14 max-w-full w-[919px] max-md:mt-10 max-md:hidden">
+      <div class="flex flex-wrap gap-5 justify-center items-center">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bb1c355cd765ce352bd43b67f3fb407a8f4929dc66058fced294edee363323d?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 1" class="object-contain aspect-[3.4] w-[204px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3369a4a85ab067fa4dc3f052739f27d81049591f3055499cc8f99e9d82172ea8?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 2" class="object-contain aspect-[0.94] w-[84px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00a1caacc69c5d6abc72dc4bfcf629ec06cc026298d8e3998b4114acf0018e0?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 3" class="object-contain aspect-[3.72] w-[182px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e78c45c4d97356c7b66222e84e7bb1488c19d06294c44ee313bf65c5c7853bb?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 4" class="object-contain aspect-[2.33] w-[179px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/efff5156b652fd2c8bec9a988b84ec2968fe9bbfd40de382304ce9f977f054bb?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 5" class="object-contain aspect-[2.84] w-[219px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/93632da3d0af2a0408a5ca042059947d0b42757a5629826922fa774d06ef149a?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 6" class="object-contain aspect-[1.26] w-[130px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd1f6e0f07582eb6fa53322bda0581e2a9d377052ffc1168e241a40b74bc1fb9?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 7" class="object-contain aspect-[3.31] w-[126px]" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2a5dbc26a5cc0e524bfdf28b5cf542cdb198484ee24170039769413cdef19d60?placeholderIfAbsent=true&apiKey=5101348916ab4730bd9f3152a4832a86" alt="Partner logo 8" class="object-contain aspect-[1.65] w-[122px]" />
+      </div>
+    </section>
+
+    <!-- mobile -->
+    <div class="inline-flex w-full flex-nowrap overflow-hidden bg-white md:hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+      <ul class="brands-wrapper">
+        <li>
+          <img src="../src/css/img/1.png" width="250" height="100" class="scale-50" />
+        </li>
+        <li>
+          <img src="../src/css/img/2.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/3.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/4.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/5.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/6.png" width="250" height="100" class="scale-50"/>
+        </li>
+        
+      </ul>
+      <ul class="brands-wrapper" aria-hidden="true">
+        <li>
+          <img src="../src/css/img/1.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/2.png" width="250" height="100" class="scale-50" />
+        </li>
+        <li>
+          <img src="../src/css/img/3.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/4.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/5.png" width="250" height="100" class="scale-50"/>
+        </li>
+        <li>
+          <img src="../src/css/img/6.png" width="250" height="100" class="scale-50"/>
+        </li>
+      </ul>
+    </div>
+
+
+    <section class="flex justify-center items-center gap-10 flex-col md:mt-20 mt-5">
+      <img src="../src/css/img/about1.png" alt="">
+      <img src="../src/css/img/about2.png" alt="">
+    </section>
+  </main>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w-full">
+  <div class="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!--Grid-->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+              <a href="#"  class="flex justify-center lg:justify-start">
+                 <img src="../src/css/img/jetinno.png" alt="">
+              </a>
+              <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">We manufacture full series coffee machines for vending/horeca/ocs deployment.</p>
+              <a href="javascript:;"  class="py-2.5 px-5 block w-fit border-2 border-black shadow-sm text-sm text-black mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                  Kontak Kami
+              </a>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Informasi</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Company</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Produk</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Berita & Pameran</a></li>
+                  <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kontak Kami</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Kategori Produk</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Kopi Kantor</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Ho.Re.Ca</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Vending</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Coffee To Go</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          <div class="lg:mx-auto text-left">
+              <h4 class="text-lg text-gray-900 font-medium mb-7">Hubungi Kami</h4>
+              <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Address: </span>4th Floor, Dehao Innovative Park, No.2, Ruitai Rd, Huangpu District, Guangzhou, Guangdong, P.R.C</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Phone: </span>+86-18620946175</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Whatsapp: </span>+86-15813394936</a></li>
+                  <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900"><span class="font-bold">Email: </span>inquiry@jetinno.com</a></li>
+              </ul>
+          </div>
+          <!--End Col-->
+          
+      </div>
+      <!--Grid-->
+      <div class="py-7 border-t border-gray-200">
+          <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+              <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/"></a> 2024 Jetinno.</span>
+              <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg>        
+                </a>
+                <a href="">
+                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+                                      
+ 
+
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script src="js/scriptAbout.js"></script>
+</body>
+</html>
